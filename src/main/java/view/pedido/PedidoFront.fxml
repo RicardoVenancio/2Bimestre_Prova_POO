@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="788.0" style="-fx-background-color: #95d5b2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.pedido.ControllerPedido">
+   <children>
+      <Label layoutX="5.0" layoutY="5.0" prefHeight="53.0" prefWidth="271.0" text="NOVO PEDIDO">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="8.0" layoutY="138.0" text="NOME">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="326.0" layoutY="20.0" text="DATA PEDIDO">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="358.0" layoutY="138.0" text="QUANTIDADE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="524.0" layoutY="138.0" text="UNIDADE MEDIDA">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="8.0" layoutY="168.0" text="VENDEDOR PEDIDO">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="391.0" layoutY="168.0" text="RESPONSÁVEL PEDIDO">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TXTNome" layoutX="45.0" layoutY="134.0" prefHeight="25.0" prefWidth="310.0" promptText="CIMENTO" />
+      <TextField fx:id="TXTQtde" layoutX="438.0" layoutY="134.0" prefHeight="25.0" prefWidth="81.0" promptText="12" />
+      <TextField fx:id="TXTUn" layoutX="631.0" layoutY="134.0" prefHeight="25.0" prefWidth="59.0" promptText="UN" />
+      <TextField fx:id="TXTVendpedido" layoutX="121.0" layoutY="164.0" prefHeight="25.0" prefWidth="250.0" promptText="JOÃO" />
+      <TextField fx:id="TXTRespedido" layoutX="522.0" layoutY="164.0" prefHeight="25.0" prefWidth="250.0" promptText="VENÂNCIO" />
+      <Button fx:id="BTNSalvar" layoutX="232.0" layoutY="194.0" mnemonicParsing="false" onAction="#SalvarPedido" style="-fx-background-color: #2d6a4f;" text="GERAR PEDIDO" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="BTNEditar" layoutX="343.0" layoutY="194.0" mnemonicParsing="false" onAction="#EditarPedido" style="-fx-background-color: #2d6a4f;" text="EDITAR" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="BTNDeletar" layoutX="412.0" layoutY="194.0" mnemonicParsing="false" onAction="#DeletarPedido" style="-fx-background-color: #2d6a4f;" text="DELETAR PEDIDO" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="BTNPesquisar" layoutX="609.0" layoutY="42.0" mnemonicParsing="false" onAction="#BuscarID" style="-fx-background-color: #2d6a4f;" text="PESQUISAR" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="TXTBuscarID" layoutX="647.0" layoutY="16.0" prefHeight="25.0" prefWidth="44.0" promptText="10" />
+      <Label layoutX="566.0" layoutY="20.0" text="BUSCAR ID">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="LabelLabel" layoutX="664.0" layoutY="79.0" text="Label" visible="false" />
+      <TableView fx:id="TablePedido" layoutX="36.0" layoutY="261.0" prefHeight="245.0" prefWidth="752.0" style="-fx-background-color: #52b788;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="ColunaPedido" prefWidth="58.0" text="PEDIDO" />
+          <TableColumn fx:id="ColunaNome" minWidth="0.0" prefWidth="160.0" text="NOME" />
+            <TableColumn fx:id="ColunaDataPedido" prefWidth="100.0" text="DATA PEDIDO" />
+            <TableColumn fx:id="ColunaQtde" prefWidth="55.0" text="QTDE" />
+            <TableColumn fx:id="ColunaUn" prefWidth="121.0" text="UN" />
+            <TableColumn fx:id="ColunaVendPedido" prefWidth="142.0" text="VENDEDOR PEDIDO" />
+            <TableColumn fx:id="ColunaRespPedido" prefWidth="151.0" text="RESP. PEDIDO" />
+        </columns>
+      </TableView>
+      <DatePicker fx:id="TXTData" layoutX="409.0" layoutY="16.0" prefHeight="25.0" prefWidth="113.0" promptText="01/01/2020" />
+      <Label fx:id="Labelid" layoutX="539.0" layoutY="79.0" text="ID PESQUISADO:" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="TESTE" layoutX="606.0" layoutY="41.0" prefWidth="150.0" promptText="SELECIONAR ID" visible="false" />
+   </children>
+</AnchorPane>
